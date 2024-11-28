@@ -1,17 +1,33 @@
+ <html>
 
-<html>
-<html class="ios device-pixel-ratio-1 device-desktop support-position-sticky">
+  <head>
 
-<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="theme-color" content="#2196f3">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="robots" content="noindex">
-    <script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+
+  <title>Zetsu （应用多分屏.小窗模式）_艾峰苹果工具箱</title>
+
+<meta name="description" content="快速APP分屏，上下屏模式，多窗口模式，自定义模式">
+
+<meta name="keywords" content="">
+
+    <link rel="stylesheet" href="static/css/weui.min.css">
+
+    <link rel="stylesheet" href="static/css/theme.css">
+
+    <script src="static/js/layui.js"></script>
+
+    <link id="layuicss-laydate" rel="stylesheet" href="static/css/laydate.css" media="all">
+
+    <link id="layuicss-layer" rel="stylesheet" href="https://ios33.github.io/gj/static/css/layer.css?v=3.5.1" media="all">
+
+    <link id="layuicss-skincodecss" rel="stylesheet" href="static/css/code.css" media="all">
+    <link id="layuicss-skincodecss" rel="stylesheet" href="static/css/iconfont.css" media="all">
+    
+    <script src="static/js/jquery-3.4.1.min.js"></script>
+
+    <script src="static/js/vue.min.js"></script><script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -19,255 +35,162 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script>    <style>
-    .mask {
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.8);
-        color: #fff;
-        text-align: right;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999999;
-        display: none;
-        
-    }
-    .mask img {
-        width: 280px;
-        height: 150px;
-        margin: 30px;
-        float: 20px;
-    }
-    .search_form{
-        width:100%;
-        height:42px;
-        background: #f7f3ef;
-    }
+</script>
+    <style type="text/css">@keyframes move { 0% {background-position: 0 0;} 100% { background-position: -300px 0; } } .wrap {}</style>
 
-    /*左边输入框设置样式*/
-    input[type=text].input_text{
-        width:75%;
-        height: 40px;
-        /* border:1px solid green;*/
-        /*清除掉默认的padding*/
-        padding:0px;
-        background: rgba(255,255,255,0.2);
-		webkit-text-fill-color: #4c4c4ccc;
-        box-shadow: inset 6px 5px 5px #e1e1e1, inset -5px -5px 5px #fff;
-        /*提示字首行缩进*/
-        text-indent: 20px;
-
-        /*去掉蓝色高亮框*/
-        outline: none;
-
-        /*用浮动解决内联元素错位及小间距的问题*/
-        float:left;
-    }
-
-    .input_sub{
-        width:25%;
-        height: 42px;
-        background: #9fcd84;
-        
-        /*去掉submit按钮默认边框*/
-        border:0px;
-        /*改成右浮动也是可以的*/
-        float:left;
-        color:white;/*搜索的字体颜色为白色*/
-        font-size:100%;
-        text-align: center;
-        cursor:pointer;/*鼠标变为小手*/
-    }
-	.cate-f{display: -webkit-box; display: -webkit-flex; display: flex; flex-wrap: wrap;  justify-content: center; align-items: center;}
-	.cate-f .cate-fimg{ width:25px; margin-right:7px;}
-	.cate-f .cate-fimg img{ width:25px;}
-	.categories .category .catbloc{ height:25px; line-height:25px;}
-    </style>
+    <style type="text/css">.heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 500%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}</style>
     
-  
-<title>系统.巨魔-艾峰苹果工具箱</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
+    <style type="text/css">
+	   body{background-color: #e6e7ee;}
+	   .rj_card{
+	      border:1px solid #d1d9e6;
+          border-radius: 8px !important;
+          box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
+          color: #31344b;
+          background-color: #e6e7ee;
+          border-color: #d1d9e6;
+	   }
+	   .rj_card2 {
+    margin: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 4px rgba(221, 221, 221,0.5);
+    background-color: #fff;
+}
 
-    <!-- Enable the homescreen app on mobile devices -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <!-- Enable the App Icon -->
-    <link rel="icon" type="image/png" sizes="196x196" href="/img/favicon.ico">
-    <link rel="apple-touch-icon" href="/img/favicon.ico">
-    <link rel="apple-touch-startup-image" href="/img/favicon.ico">
-
-    <link rel="stylesheet" href="static/css/framework7.bundle.min.css">
-    <link rel="stylesheet" href="static/css/icons.css">
-    <link rel="stylesheet" href="static/css/app.css">
-    <link rel="stylesheet" href="static/css/common-1931s.css">
-    
-    <script id="LA_COLLECT" src="static/js/js-sdk-pro.min.js"></script>
-    <script src="static/js/jquery-3.4.1.min.js"></script>    
-
-<script type="text/javascript" src="static/js/ey_global.js"></script>
+         .rj_card3 {
+		    margin:0 15px;
+            border:1px solid #000;
+			display: -webkit-box; display: -webkit-flex; display: flex; flex-wrap: wrap;  justify-content: flex-start; padding:10px;
+         }
+		 .rj_gg { 
+		     color:#FF0000; width:calc(100% - 30px); padding-left:10px; ine-height:24px; 
+         }
+		 .rj_icon { 
+		    width:20px; 
+		   
+         }
+		 .rj_icon .iconfont {
+              color: #ff0000; font-size:24px; line-height:24px;   
+         }
+	   
+	  /* .rj-content{ background:none;}
+	   .rj-content p, .rj-content section{  background-color:#e6e7ee  !important;}
+	   .rj-content span{  background-color:#e6e7ee  !important;}*/
+	  
+	  .dw-list{display: -webkit-box; display: -webkit-flex; display: flex; flex-wrap: wrap;  justify-content: flex-start;}
+      .dw-list .dw-item{margin-right:16px; padding:16px 0; border-radius: 10px; background-color: rgb(7, 193, 96); color: rgb(255, 255, 255); font-size: 16px; justify-content: center; display: flex; align-items: center; text-align:center; box-shadow: rgba(184, 185, 190, 0.59) 6px 6px 12px, rgba(255, 255, 255, 0.62) -6px -6px 12px; border: 1px solid rgb(209, 217, 230);}
+	
+	   		  .dw-list .dw-item{width:100%;}
+		 	  .dw-list .dw-item:last-child{margin-right:0;}
+	  .rj-content{word-wrap: break-word;}
+	  .ipa-detail{display: -webkit-box; display: -webkit-flex; display: flex; flex-wrap: wrap;  justify-content: flex-start;}
+      .ipa-detail .ipa-item{
+	     opacity: 1;
+         background: #b1b1b726;
+         padding: 10px 0;
+         color: rgb(65 71 84);
+         text-shadow: #00000042 5px 3px 3px;
+         box-shadow: rgb(184, 185, 190) 2px 2px 5px inset, rgb(255, 255, 255) -3px -3px 7px inset;
+		 display: flex; 
+		 font-size:14px;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         width: 30%; 
+		 margin:20px 1.5%;;
+         border-radius: 10px;
+		 }
+		 .ipa-detail .ipa-item .iconfont {
+            font-size: 24px;
+         }
+		 .ipa-detail .ipa-item:nth-child(1) .iconfont {
+              color: #ff8c19;
+         }
+		 .ipa-detail .ipa-item:nth-child(6) .iconfont {
+              color: #ffcc14;
+         }
+		 
+   </style>
+   <script type="text/javascript" src="static/js/ey_global.js"></script>
 </head>
 
-<body>
-
-<div class="mask"><img src='static/picture/arrow.png'></div>
-     <div id="app" class="framework7-root">
-
-        <!-- Ambition-底部版权-->
-        <div class="views tabs safe-edges">
-
-            <div id="view-main-page" class="view view-main tab tab-active">
-                <div class="page page-current" data-name="home">
-                    <!---首页-->
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                            <div class="left" style="left: 20px;">
-                                <div class="refreshBtnDiv">
-                                    <span class="refreshText">Refreshing...
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="title sliding" style="left: 0px;">艾峰苹果工具箱</div>
-              <div class="right" style="right: 10px;">
-                                    
-                                <font color="#888888">艾峰科技</font>&nbsp;
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewbox="0 0 847 1058.75" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd"><defs>
-                    </defs><g><path fill="#4cd964" d="M423 23c221,0 400,179 400,400 0,221 -179,400 -400,400 -221,0 -400,-179 -400,-400 0,-221 179,-400 400,-400zm-86 469l275 -275c13,-13 33,-13 45,0l36 35c12,13 12,33 0,45l-333 333c-13,12 -33,12 -45,0l-161 -161c-12,-12 -12,-32 0,-45l36 -35c12,-13 32,-13 45,0l102 103z"></path></g></svg>
-                            </div>
-                        </div>
-                    </div>
-                    
-<div class="page-content">
-                        <div class="page-body">
-                            			<link rel="stylesheet" href="static/css/swiper-bundle.min.css">
-
-    <!-- Demo styles -->
-    <style>
   
 
-      .swiper {
-        width: 100%;
-        height: 120px;
-		    border-radius: 10px;
-      }
+  <body ontouchstart="">
+       <div id="app" class="container">
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
+      <div class="rj-my-top">
 
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
+        <div style="width: 10%;">
 
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    </style>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-	  
-	          <div class="swiper-slide">
-		
-		   <a href='https://simhaoka.com/phone/index?id=54F506338E0F5AD2EE646BBA7B31DF44' target="_self"><img src='static/picture/1-240319231H0E3.png' alt=''></a>
-		</div>
-               <div class="swiper-slide">
-		
-		   <a href='https://ios33.github.io/gj/' target="_self"><img src='static/picture/1-23042F34621524.png' alt=''></a>
-		</div>
-               <div class="swiper-slide">
-		
-		   <a href='index-home_View_index_788.html' target="_self"><img src='static/picture/1-240320000Q43G.png' alt=''></a>
-		</div>
-               <div class="swiper-slide">
-		
-		   <a href='http://qpdau.yhzu.cn/' target="_self"><img src='static/picture/1-230414163425346.jpg' alt=''></a>
-		</div>
-             </div>
-    
+          <a href="javascript:;" onclick="javascript :history.back(-1);">
+
+            <img src="static/picture/icon_back.png" style="width: 30px;"></a>
+
+        </div>
+
+        <div style="font-size: 16px;">Zetsu （应用多分屏.小窗模式）</div>
+
+        <div style="width: 10%;">
+
+          <a href="index.html">
+
+            <img src="static/picture/icon_home.png" style="width: 30px;"></a>
+
+        </div>
+
+      </div>
+
+      <div class="rj_card">
+
+        <div style="display: flex; padding: 15px;">
+
+          <div style="width: 20%;">
+
+            <img src="static/picture/1-2410121IU2I1.png" style="width: 100%;"></div>
+
+          <div style="width: 80%; padding-left: 20px;">
+
+            <div style="font-size: 20px; font-weight: 400;">巨魔（安装 插件）</div>
+
+            <div style="display: flex; justify-content: space-between;">
+
+              <div style="color: rgb(153, 153, 153); font-size: 10px; font-weight: 400; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+
+			  系统：ios 丨 版本：1.6.2</div>
+
+              <div style="color: rgb(255, 0, 0); font-size: 10px; font-weight: 400; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+
+			  更新于：2024-11-29</div></div>
+
+          </div>
+
+        </div>
+
+        <div style="padding: 0px 15px 15px;" class="dw-list">
+           <a href=":https://byg.iosios.net/" class="dw-item"><div>巨魔软件</div></a>
+               
+              </div>
+              
+              <div class="ipa-detail">
+                   <div class="ipa-item"><i class="iconfont icon-star-fill"></i>5.0</div>
+                   <div class="ipa-item"><i class="iconfont icon-integral1"></i>20KB</div>
+                   <div class="ipa-item"><i class="iconfont icon-earth"></i>中文/汉化版</div>
+                   <div class="ipa-item"><i class="iconfont icon-apple-fill"></i></div>
+                   <div class="ipa-item"><i class="iconfont icon-tishi"></i>1.6.2</div>
+                   <div class="ipa-item"><i class="iconfont icon-tanhao1"></i>越狱插件</div>                     
+              </div>
+
+      </div>
       
-    </div>
-
-    <!-- Swiper JS -->
-    <script src="static/js/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
-     <div style=" line-height: 40px;">
-     <marquee behavior="scroll" direction="left">
-       长期套可选号，正规的流量卡通用大流量，首页领取，套餐线上线下可查，不是物联卡，防止失联，一定要关注下公众号。各位且行且珍惜.更新不易.望善待    </marquee>
-                   </div>    
+      <div class="rj_card3" style="padding:5px;">
+         <div class="rj_icon"><i class="iconfont icon-tanhao1"></i></div>
+         <div class="rj_gg"><marquee behavior="scroll" direction="left">本站所有资源均收集于网络！标注了自签版需要自行证书签名或者巨魔安装-商店版发稿之前测试都已注明有无内购和广告，或者其他特别说明，后续不知自行测试，商店版应用都是随时下架，手慢无，时间有限无法做到实时同步更新</marquee>   </div>
+      </div>
+      
                             
-                          
-                                        </div>
-
-                                 
-                                       
-
-  <div class="search_form" style="margin-top: 5px;">   <form method='get' action='/index.php?m=home&c=Search&a=lists'>
-    <input type="hidden" name="m" value="home"><input type="hidden" name="c" value="Search"><input type="hidden" name="a" value="lists"><input type="hidden" name="method" value="1">    <input type="text" name='keywords' class="input_text" placeholder="关键词全网搜索">
-    <input type='submit' value="🔍搜索" class="input_sub">
-  </form>
-   </div>
-<div style="width: 100%;line-height: 40px;">
-  <marquee behavior="scroll" direction="left">
-  需要流量卡 自己领取  都是正规流量卡   公众号  艾峰科技  </marquee>
-</div>
-<div class="col-50"> <a onclick='ey_97c0670026ad69b846ea069ffdb217a9(this);' data-url='/index.php?m=home&c=Lists&a=index&tid=72&peizhigongju=%E5%B7%A8%E9%AD%94%E5%B7%A5%E5%85%B7&ZXljbXM=1' class="external item-link item-content ">
-  <div class="category">
-    <div class="apps catbloc "> 巨魔工具 </div>
-  </div>
-  </a> </div>
-<div class="col-50"> <a onclick='ey_97c0670026ad69b846ea069ffdb217a9(this);' data-url='/index.php?m=home&c=Lists&a=index&tid=72&peizhigongju=%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6&ZXljbXM=1' class="external item-link item-content ">
-  <div class="category">
-    <div class="apps catbloc "> 实用插件 </div>
-  </div>
-  </a> </div>
-<div class="col-50"> <a onclick='ey_97c0670026ad69b846ea069ffdb217a9(this);' data-url='/index.php?m=home&c=Lists&a=index&tid=72&peizhigongju=%E7%B3%BB%E7%BB%9F%E5%B7%A5%E5%85%B7&ZXljbXM=1' class="external item-link item-content ">
-  <div class="category">
-    <div class="apps catbloc "> 系统工具 </div>
-  </div>
-  </a> </div>
-<div class="col-50"> <a onclick='ey_97c0670026ad69b846ea069ffdb217a9(this);' data-url='/index.php?m=home&c=Lists&a=index&tid=72&peizhigongju=%E5%85%B6%E4%BB%96%E5%B7%A5%E5%85%B7&ZXljbXM=1' class="external item-link item-content ">
-  <div class="category">
-    <div class="apps catbloc "> 其他工具 </div>
-  </div>
-  </a> </div>
-                                              
                                             <script type="text/javascript">
     function ey_97c0670026ad69b846ea069ffdb217a9(obj) {
         var dataurl = obj.getAttribute("data-url");
